@@ -1,0 +1,10 @@
+* text eol=lf
+
+# binary files
+rexx    binary
+regina  binary
+rxqueue binary
+rxstack binary
+*.so    binary
+*.a     binary
+msgcmp  binary

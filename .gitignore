@@ -1,0 +1,6 @@
+*.o
+*.dbg
+*.x
+*.mtb
+PackageInfo*
+

@@ -2774,7 +2774,7 @@ static void init_it_all( tsd_t *TSD )
  * tree isn't executed here.
  * Exactly fptr xor str must be non-null.
  */
-static void fetch(tsd_t *TSD, FILE *fptr, const streng *str,
+static void _fetch(tsd_t *TSD, FILE *fptr, const streng *str,
                   internal_parser_type *result)
 {
    init_it_all( TSD ) ;
@@ -2835,7 +2835,7 @@ static void fetch_protected( tsd_t * volatile TSD, FILE *fptr,
       panicked = 1;
    }
    else
-      fetch( TSD, fptr, str, result );
+      _fetch( TSD, fptr, str, result );
 
    TSD->in_protected = 0;
    THREAD_UNPROTECT( regina_parser )
@@ -2886,3 +2886,7 @@ void fetch_string(tsd_t *TSD, const streng *str, internal_parser_type *result)
 {
    fetch_protected(TSD, NULL, str, result);
 }
+#include <cstdio>
+#include <cstdio>
+#include <cstdio>
+#include <cstdio>

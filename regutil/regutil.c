@@ -86,11 +86,13 @@ struct {
     {"SYSRESETEVENTSEM", sysreseteventsem},
     {"SYSWAITEVENTSEM", syswaiteventsem},
     {"SYSINI", sysini},
+#ifndef __MVS__        
     {"SYSBOOTDRIVE", sysbootdrive},
     {"SYSWINVER", syswinver},
     {"SYSOS2VER", syswinver},
     {"SYSLINVER", syswinver},
     {"SYSVERSION", syswinver},
+#endif    
     {"SYSUTILVERSION", sysutilversion},
     {"SYSDRIVEINFO", sysdriveinfo},
     {"SYSDRIVEMAP", sysdrivemap},

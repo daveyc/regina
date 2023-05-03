@@ -31,7 +31,7 @@
 # include <windows.h>
 #else
 # include <unistd.h>
-# ifndef DOS
+# if !defined(DOS) && !defined(__MVS__)
 #  include <sys/utsname.h>
 #  include <sys/param.h>
 #  include <sys/time.h>
@@ -464,6 +464,13 @@ rxfunc(syswinver)
    checkparam(0,0);
 
    result->strlength = sprintf(result->strptr, "%d.%d", _osmajor, _osminor );
+   return 0;
+}
+#elif defined(__MVS__)
+rxfunc(syswinver)
+{
+   checkparam(0,0);
+   result->strlength = sprintf(result->strptr, "%d.%d", 2, 5);
    return 0;
 }
 #else

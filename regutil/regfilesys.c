@@ -38,7 +38,7 @@
 # include <unistd.h>
 # include <utime.h>
 # include <sys/types.h>
-# ifndef DOS
+# if !defined(DOS) && !defined(__MVS__)
 #  include <sys/param.h>
 # endif
 # ifdef HAVE_SYS_MOUNT_H

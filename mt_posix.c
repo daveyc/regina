@@ -275,7 +275,11 @@ tsd_t *ReginaInitializeThread(void)
    OK &= init_arexxf(retval);           /* Initialize the arxfuncs modules */
    retval->loopcnt = 1;                 /* stupid r2perl-module              */
    retval->traceparse = -1;
+#ifndef __MVS__   
    retval->thread_id = (unsigned long)pthread_self();
+#else 
+   retval->thread_id = (unsigned long)(pthread_self().__ & 0x7FFFFFFF);
+#endif   
 
    if (!OK)
       exiterror( ERR_STORAGE_EXHAUSTED, 0 ) ;

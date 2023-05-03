@@ -24,7 +24,7 @@
 
 #include <time.h>
 #include <ctype.h>
-#if !defined(_WIN32) && !defined(DOS)
+#if !defined(_WIN32) && !defined(DOS) && !defined(__MVS__)
 # include <sys/param.h>
 #endif
 
